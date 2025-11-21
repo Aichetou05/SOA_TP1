@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://supnum.mr/livres"
+           xmlns:tns="http://supnum.mr/livres"
+           elementFormDefault="qualified">
+
+    <!-- Type Livre -->
+    <xs:complexType name="livre">
+        <xs:sequence>
+            <xs:element name="isbn" type="xs:string"/>  <!-- International Standard Book Number:978-3-16-148410-0 -->
+            <xs:element name="titre" type="xs:string"/>
+            <xs:element name="auteur" type="xs:string"/>
+            <xs:element name="anneePublication" type="xs:int"/>
+            <xs:element name="disponible" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!--  GetLivre(isbn)  -->
+    <xs:element name="getLivreRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="isbn" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getLivreResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="livre" type="tns:livre" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- GetAllLivres() -->
+    <xs:element name="getAllLivresRequest">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllLivresResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="livres" type="tns:livre"
+                            maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- AddLivre(livre) -->
+    <xs:element name="addLivreRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="livre" type="tns:livre"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addLivreResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="livre" type="tns:livre"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- UpdateLivre(isbn, livre) -->
+    <xs:element name="updateLivreRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="isbn" type="xs:string"/>
+                <xs:element name="livre" type="tns:livre"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateLivreResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="livre" type="tns:livre"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- DeleteLivre(isbn) -->
+    <xs:element name="deleteLivreRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="isbn" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteLivreResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="success" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- EmpruntLivre(isbn) -->
+    <xs:element name="empruntLivreRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="isbn" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="empruntLivreResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="livre" type="tns:livre"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ReturnLivre(isbn) -->
+    <xs:element name="returnLivreRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="isbn" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="returnLivreResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="livre" type="tns:livre"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
