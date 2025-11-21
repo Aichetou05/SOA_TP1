@@ -103,7 +103,7 @@
 						<configuration>
 							<!-- عدّلي المسار حسب مكان ملف الـ XSD -->
 							<sources>
-								<source>src/main/resources/server.xsd</source>
+								<source>src/main/resources/livre.xsd</source>
 							</sources>
 
 							<outputDirectory>
