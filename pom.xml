@@ -101,7 +101,6 @@
 						</goals>
 						<phase>generate-sources</phase>
 						<configuration>
-							<!-- عدّلي المسار حسب مكان ملف الـ XSD -->
 							<sources>
 								<source>src/main/resources/livre.xsd</source>
 							</sources>

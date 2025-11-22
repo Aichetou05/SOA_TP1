@@ -2,13 +2,13 @@ mr\supnum\server_manager\wsdl\AddLivreResponse.class
 mr\supnum\server_manager\wsdl\DeleteLivreRequest.class
 mr\supnum\server_manager\wsdl\GetLivreRequest.class
 mr\supnum\server_manager\wsdl\ObjectFactory.class
+META-INF\JAXB\episode_xjc_1.xjb
 mr\supnum\server_manager\wsdl\GetLivreResponse.class
 mr\supnum\server_manager\wsdl\UpdateLivreRequest.class
 mr\supnum\server_manager\wsdl\EmpruntLivreResponse.class
 mr\supnum\server_manager\wsdl\ReturnLivreRequest.class
 mr\supnum\server_manager\wsdl\GetAllLivresResponse.class
 mr\supnum\server_manager\wsdl\AddLivreRequest.class
-mr\supnum\biblio_soap\BiblioSoapApplication.class
 mr\supnum\server_manager\wsdl\ReturnLivreResponse.class
 mr\supnum\server_manager\wsdl\UpdateLivreResponse.class
 mr\supnum\server_manager\wsdl\EmpruntLivreRequest.class
